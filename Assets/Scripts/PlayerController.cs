@@ -19,8 +19,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (DialogueManager.IsDialogueActive) return;
+        
         Move();
     }
+
     void Move()
     {
         Vector3 newPosition = transform.position + new Vector3(moveVector.x * speed * Time.deltaTime, moveVector.y * speed * Time.deltaTime, 0);
